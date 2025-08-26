@@ -1,7 +1,7 @@
 public class SavingsAccount {
     public String name;
     public double balance, interestRate, rate;
-    public int monthRemaining;
+    public int term;
     
     //Informasi Akun
     public void informasiPengguna(){
@@ -63,17 +63,17 @@ public class SavingsAccount {
             System.out.println("Bulan tidak valid");
             t = 0;
         }
-        monthRemaining = t;
+        term = t;
     }
 
     // Mendapatkan bunga bulanan hingga jatuh tempo
     public void earnInterest() {
-        if (monthRemaining > 0) {
+        if (term > 0) {
             balance += balance * rate / 12;
-            monthRemaining--;
+            term--;
             System.out.println("Saldo      : Rp " + balance);
             System.out.println("Bunga      : " + (rate * 100) + "%");
-            System.out.println("Sisa Bulan : " + monthRemaining);
+            System.out.println("Sisa Bulan : " + term);
             System.out.println("========================");
             System.out.println();
         } else {
